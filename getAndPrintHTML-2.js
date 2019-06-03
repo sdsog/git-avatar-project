@@ -24,9 +24,9 @@ function getAndPrintHTML(options) {
     });
 
   });
-  /* Add your code here */
 
 }
 
-
 getAndPrintHTML(requestOptions);
+
+console.log(requestOptions);
