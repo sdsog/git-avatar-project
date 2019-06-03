@@ -7,10 +7,11 @@ var requestOptions = {
 
 function printLowerCase (html) {
 
-console.log("this is lowercase: " + html);
-
+	var lowerCaseStr = html.toLowerCase();
+	console.log(lowerCaseStr);
 }
+
 
 getHTML(requestOptions, printLowerCase);
 
-printLowerCase();
+// printUpperCase();
