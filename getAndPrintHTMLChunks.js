@@ -15,13 +15,12 @@ function getAndPrintHTMLChunks () {
 
   // the callback is invoked when a `data` chunk is received
   response.on('data', function (data) {
-    console.log('\n Chunk Received: \n:' + data);
+    console.log('\n THIS IS THE DATA:\n:' + data);
   });
 
  });
 
 }
-
 
 getAndPrintHTMLChunks();
 
