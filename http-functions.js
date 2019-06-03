@@ -1,31 +1,22 @@
 var https = require('https'); 
 
-var requestOptions = {
-    host: 'sytantris.github.io',
-    path: '/http-examples/step2.html'
-  };
-
-function getAndPrintHTML(options) {
-
+module.exports = function getHTML (options, callback) {
+  //receives o
   https.get(options, function (response) {
-
   	response.setEncoding('utf8');
 	//empty string variable
-  	var buffer = '';
-
+    var html = '';
     //when data chunk received, push it into buffer
   	response.on('data', function(chunk) {
-  		buffer += chunk;
+  		html += chunk;
   	}); 
-
     //when all data is received, console log the buffer
   	response.on('end', function() {
-    console.log(buffer);
+    printHTML(html);
     });
-
   });
+};
 
+function printHTML (html) {
+  console.log(html);
 }
-
-getAndPrintHTML(requestOptions);
-
